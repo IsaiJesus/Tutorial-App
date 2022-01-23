@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const Search = ({ searchField }) => {
   const [tutorials, setTutorials] = useState([]);
@@ -13,32 +13,29 @@ const Search = ({ searchField }) => {
     getData();
   }, []);
 
-  const filteredProducts = tutorials.filter(
-    tutorial => {
-      return (
-        tutorial
-        .title
-        .toLowerCase()
-        .includes(searchField.toLowerCase())
-      );
-    }
-  );
+  const filteredTutorials = tutorials.filter((tutorial) => {
+    return tutorial.title.toLowerCase().includes(searchField.toLowerCase());
+  });
 
   return (
     <div
-      className="rounded-md shadow-md flex flex-col p-3 bg-white absolute top-12 w-full"
+      className={
+        filteredTutorials.length === 0 || searchField === ""
+          ? "hidden"
+          : "rounded-md shadow-md flex flex-col p-3 bg-white absolute top-12 w-full"
+        }
     >
-      {filteredProducts.map((tutorial) =>
-          <a
-            key={tutorial._id}
-            target="_blank"
-            rel="noreferrer"
-            href={tutorial.url}
-            className="hover:underline p-1 truncate font-semibold"
-          >
-            {tutorial.title}
-          </a>
-      )}
+      {filteredTutorials.map((tutorial) => (
+        <a
+          key={tutorial._id}
+          target="_blank"
+          rel="noreferrer"
+          href={tutorial.url}
+          className="hover:underline p-1 truncate font-semibold"
+        >
+          {tutorial.title}
+        </a>
+      ))}
     </div>
   );
 };
