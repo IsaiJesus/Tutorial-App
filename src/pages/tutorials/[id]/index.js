@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { useRouter } from "next/router";
-import Error from "next/error";
-import Head from "next/head";
-import Category from "components/Category";
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import Error from 'next/error';
+import Head from 'next/head';
+import Category from 'components/Category';
 
 const TutorialDetails = ({ tutorial, error }) => {
 

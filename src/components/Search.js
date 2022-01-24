@@ -1,17 +1,7 @@
-import { useState, useEffect } from 'react';
+import useFetch from "hooks/useFetch";
 
 const Search = ({ searchField }) => {
-  const [tutorials, setTutorials] = useState([]);
-
-  const getData = async () => {
-    const res = await fetch("http://localhost:3000/api/tutorials");
-    const data = await res.json();
-    setTutorials(data);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+  const { tutorials } = useFetch();
 
   const filteredTutorials = tutorials.filter((tutorial) => {
     return tutorial.title.toLowerCase().includes(searchField.toLowerCase());
@@ -22,8 +12,8 @@ const Search = ({ searchField }) => {
       className={
         filteredTutorials.length === 0 || searchField === ""
           ? "hidden"
-          : "rounded-md shadow-md flex flex-col p-3 bg-white absolute top-12 w-full"
-        }
+          : "rounded-md shadow-md flex flex-col p-3 bg-white absolute top-12 max-h-56 w-full overflow-y-auto"
+      }
     >
       {filteredTutorials.map((tutorial) => (
         <a
@@ -31,9 +21,9 @@ const Search = ({ searchField }) => {
           target="_blank"
           rel="noreferrer"
           href={tutorial.url}
-          className="hover:underline p-1 truncate font-semibold"
+          className="hover:underline p-1 font-semibold"
         >
-          {tutorial.title}
+          <p className="truncate">{tutorial.title}</p>
         </a>
       ))}
     </div>

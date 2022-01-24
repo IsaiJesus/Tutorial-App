@@ -1,10 +1,11 @@
-import { useState, useEffect, useContext } from "react";
-import SearchContext from "context/SearchContext";
-import Head from "next/head";
-import TitleSection from "components/TitleSection";
-import NotFound from "components/NotFound";
-import Tutorial from "components/Tutorial";
-import { useRouter } from "next/router";
+import { useEffect, useContext } from 'react';
+import SearchContext from 'context/SearchContext';
+import Head from 'next/head';
+import TitleSection from 'components/TitleSection';
+import NotFound from 'components/NotFound';
+import Tutorial from 'components/Tutorial';
+import { useRouter } from 'next/router';
+import useFetch from 'hooks/useFetch';
 
 const Search = () => {
   const { search } = useContext(SearchContext);
@@ -12,21 +13,13 @@ const Search = () => {
 
   const title = `Search results: ${search}`;
 
-  const [tutorials, setTutorials] = useState([]);
-
-  const getData = async () => {
-    const res = await fetch("http://localhost:3000/api/tutorials");
-    const data = await res.json();
-    setTutorials(data);
-  };
+  const { tutorials } = useFetch();
 
   useEffect(() => {
     if(search === ""){
       router.back(); 
     }
-    
-    getData();
-  }, []);
+  }, [router, search]);
 
   const filteredTutorials = tutorials.filter((tutorial) => {
     return tutorial.title.toLowerCase().includes(search.toLowerCase());

@@ -13,7 +13,7 @@ const tutorialSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        maxlength: [150, 'Description must to be less than 140 characters']
+        maxlength: [200, 'Description must to be less than 140 characters']
     },
     url: {
         type: String,
