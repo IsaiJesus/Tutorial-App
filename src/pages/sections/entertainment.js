@@ -26,7 +26,7 @@ const Enterteinment = ({tutorials}) => {
 export default Enterteinment;
 
 export const getServerSideProps = async (ctx) => {
-  const res = await fetch("https://tutorial-app-phi.vercel.app/api/tutorials");
+  const res = await fetch("https://suspicious-volhard-e36ba7.netlify.app/api/tutorials");
   const tutorials = await res.json();
 
   return {
