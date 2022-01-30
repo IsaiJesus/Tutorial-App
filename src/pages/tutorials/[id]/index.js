@@ -18,7 +18,7 @@ const TutorialDetails = ({ tutorial, error }) => {
   //delete tutorial with _id from the props
   const deleteTutorial = async () => {
     try {
-      await fetch(`/api/tutorials/${tutorial._id}`, {
+      await fetch(`https://unruffled-ptolemy-c1f1aa.netlify.app/api/tutorials/${tutorial._id}`, {
         method: "DELETE",
       });
     } catch (error) {
@@ -127,7 +127,7 @@ const TutorialDetails = ({ tutorial, error }) => {
 export default TutorialDetails;
 
 export async function getServerSideProps({ query: { id } }) {
-  const res = await fetch(`/api/tutorials/${id}`);
+  const res = await fetch(`https://unruffled-ptolemy-c1f1aa.netlify.app/api/tutorials/${id}`);
   if (res.status === 200) {
     const tutorial = await res.json();
     return {

@@ -26,7 +26,7 @@ const Enterteinment = ({tutorials}) => {
 export default Enterteinment;
 
 export const getServerSideProps = async (ctx) => {
-  const res = await fetch("/api/tutorials");
+  const res = await fetch("https://unruffled-ptolemy-c1f1aa.netlify.app/api/tutorials");
   const tutorials = await res.json();
 
   return {
