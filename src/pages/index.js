@@ -28,7 +28,7 @@ export default function Index({tutorials}) {
 }
 
 export const getServerSideProps = async (ctx) => {
-  const res = await fetch("/api");
+  const res = await fetch("/api/tutorials");
   const tutorials = await res.json();
 
   return {
