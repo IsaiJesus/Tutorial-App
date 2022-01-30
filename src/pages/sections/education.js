@@ -26,7 +26,7 @@ const Education = ({tutorials}) => {
 export default Education;
 
 export const getServerSideProps = async (ctx) => {
-  const res = await fetch("http://localhost:3000/api/tutorials");
+  const res = await fetch("/api/tutorials");
   const tutorials = await res.json();
 
   return {

@@ -4,7 +4,7 @@ const useFetch = () => {
   const [tutorials, setTutorials] = useState([]);
 
   const getData = async () => {
-    const res = await fetch("http://localhost:3000/api/tutorials");
+    const res = await fetch("/api/tutorials");
     const data = await res.json();
     setTutorials(data);
   };

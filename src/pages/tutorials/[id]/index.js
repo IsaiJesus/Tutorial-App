@@ -18,7 +18,7 @@ const TutorialDetails = ({ tutorial, error }) => {
   //delete tutorial with _id from the props
   const deleteTutorial = async () => {
     try {
-      await fetch(`http://localhost:3000/api/tutorials/${tutorial._id}`, {
+      await fetch(`/api/tutorials/${tutorial._id}`, {
         method: "DELETE",
       });
     } catch (error) {
@@ -127,7 +127,7 @@ const TutorialDetails = ({ tutorial, error }) => {
 export default TutorialDetails;
 
 export async function getServerSideProps({ query: { id } }) {
-  const res = await fetch(`http://localhost:3000/api/tutorials/${id}`);
+  const res = await fetch(`/api/tutorials/${id}`);
   if (res.status === 200) {
     const tutorial = await res.json();
     return {
