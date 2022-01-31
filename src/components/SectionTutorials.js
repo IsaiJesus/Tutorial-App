@@ -9,7 +9,7 @@ const SectionTutorials = ({ title, data }) => {
       <div className="mb-6">
         <TitleSection title={title} />
       </div>
-      {title === "Recent videos" ? (
+      {title === "Recent tutorials" ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {data.map(tutorial => (
           <Tutorial key={tutorial._id} {...tutorial}/>

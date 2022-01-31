@@ -5,10 +5,10 @@ export default function Footer() {
     <footer className="bg-blue-800 flex flex-col items-center justify-center p-6">
       <div className="grid grid-cols-1 sm:grid-cols-3 w-full items-start">
         <div className="flex flex-col items-center justify-center mb-4 sm:m-0">
-          <h4 className="font-semibold text-xl pb-3 ">Video tutorial app</h4>
+          <h4 className="font-semibold text-xl pb-3 ">Tutorial app</h4>
           <Link href="/">
             <a>
-              <img src="/logos/logo.png" alt="Video tutorial app" width="90" />
+              <img src="/logos/logo.png" alt="Tutorial app" width="90" />
             </a>
           </Link>
         </div>

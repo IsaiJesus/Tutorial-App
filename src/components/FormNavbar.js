@@ -3,7 +3,7 @@ import SearchContext from 'context/SearchContext';
 import { useRouter } from 'next/router';
 import Search from './Search';
 
-const FormNavbar = () => {
+const FormNavbar = ({handleToggleMenu}) => {
 
   const { setSearch } = useContext(SearchContext);
   const router = useRouter();
@@ -19,6 +19,7 @@ const FormNavbar = () => {
 
     if(change === "") return; 
 
+    handleToggleMenu();
     setSearch(change);
     setChange("");
     router.push("/search");

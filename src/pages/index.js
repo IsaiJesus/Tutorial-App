@@ -5,7 +5,7 @@ import Head from 'next/head';
 import OrderedTutorials from 'helpers/GetOrderedTutorials';
 
 export default function Index({tutorials}) {
-  const title = "Recent videos";
+  const title = "Recent tutorials";
 
   const orderedTutorials = OrderedTutorials(tutorials);
 

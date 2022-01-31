@@ -12,7 +12,7 @@ export default function FormTutorialPage() {
       <Head>
         <title>{query.id ? 'Update tutorial' : 'New tutorial'} | Tutorial App</title>
       </Head>
-      <div className="md:col-span-5 md:col-start-2 flex flex-col items-center justify-center p-5">
+      <div className="md:col-span-5 md:col-start-2 flex flex-col justify-center p-5">
         <h2 className="text-3xl font-bold pb-4">
           {query.id ? "Update the tutorial" : "¿Do you have an intersting tutorial?"}
         </h2>

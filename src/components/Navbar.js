@@ -26,7 +26,7 @@ const Navbar = () => {
           </a>
         </Link>
         <button
-          className="fas fa-bars sm:hidden text-black hover:text-gray-300"
+          className="fas fa-bars sm:hidden text-black hover:text-gray-300 text-2xl"
           onClick={handleToggleMenu}
         ></button>
       </div>
@@ -39,22 +39,22 @@ const Navbar = () => {
       >
         <div className="flex flex-col sm:flex-row sm:space-x-8 my-4 sm:ml-8">
           <Link href="/sections/education">
-            <a className="text-white font-medium hover:text-blue-300 py-1">
+            <a className="text-white font-medium hover:text-blue-300 py-1" onClick={handleToggleMenu}>
               Education
             </a>
           </Link>
           <Link href="/sections/entertainment">
-            <a className="text-white font-medium hover:text-blue-300 py-1">
+            <a className="text-white font-medium hover:text-blue-300 py-1" onClick={handleToggleMenu}>
               Entetertainment
             </a>
           </Link>
           <Link href="/sections/home">
-            <a className="text-white font-medium hover:text-blue-300 py-1">
+            <a className="text-white font-medium hover:text-blue-300 py-1" onClick={handleToggleMenu}>
               Home
             </a>
           </Link>
         </div>
-        <FormNavbar/>
+        <FormNavbar handleToggleMenu={handleToggleMenu}/>
       </div>
     </nav>
   );

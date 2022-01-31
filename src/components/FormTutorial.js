@@ -18,7 +18,7 @@ const FormTutorial = ({ query, back }) => {
 
   //get data from the every single tutorial
   const getTutorial = async () => {
-    const res = await fetch("http://localhost:3000/api/tutorials/" + query.id);
+    const res = await fetch("https://suspicious-volhard-e36ba7.netlify.app/api/tutorials" + query.id);
     const data = await res.json();
     setNewTutorial({ title: data.title, description: data.description, url: data.url, section: data.section });
   }
@@ -66,7 +66,7 @@ const FormTutorial = ({ query, back }) => {
   //create the tutorial to database
   const createTutorial = async () => {
     try {
-        await fetch('http://localhost:3000/api/tutorials', {
+        await fetch('https://suspicious-volhard-e36ba7.netlify.app/api/tutorials', {
           method: 'POST',
           headers: {
             "Content-Type": "application/json"
