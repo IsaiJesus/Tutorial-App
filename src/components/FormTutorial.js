@@ -18,7 +18,7 @@ const FormTutorial = ({ query, back }) => {
 
   //get data from the every single tutorial
   const getTutorial = async () => {
-    const res = await fetch("https://suspicious-volhard-e36ba7.netlify.app/api/tutorials/" + query.id);
+    const res = await fetch("https://tutorial-app-isai.netlify.app/api/tutorials/" + query.id);
     const data = await res.json();
     setNewTutorial({ title: data.title, description: data.description, url: data.url, section: data.section });
   }

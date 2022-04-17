@@ -39,7 +39,7 @@ export default function Footer() {
               <p>Instagram</p>
             </a>
             <a
-              href="https://twitter.com/isaijesus02?t=obrlWIVoAo0HPOBsEO2Auw&s=09"
+              href="https://twitter.com/isaijesus02"
               target="_blank"
               rel="noreferrer"
               className="flex flex-col items-center hover:text-white mx-3"
