@@ -33,7 +33,7 @@ const FormNavbar = ({handleToggleMenu}) => {
       ></button>
       <input
         type="text"
-        placeholder="Buscar tutorial"
+        placeholder="Search for tutorial"
         autoComplete="off"
         className="rounded-full outline-none py-2 px-3 w-full placeholder-gray-500 text-black"
         onChange={handleChange}

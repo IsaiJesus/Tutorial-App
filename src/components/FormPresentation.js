@@ -31,7 +31,7 @@ const FormPresentation = () => {
       ></button>
       <input
         onChange={handleChange}
-        placeholder="Buscar tutorial"
+        placeholder="Search for tutorial"
         className="w-11/12 py-3 pl-3 rounded-lg outline-none"
       />
     </form>
