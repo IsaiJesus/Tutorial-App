@@ -7,7 +7,7 @@ const tutorialSchema = new Schema({
         type: String,
         required: [true, 'Title is required'],
         trim: true,
-        maxlength: [60, 'Title is must to be less than 40 characters']
+        maxlength: [80, 'Title is must to be less than 40 characters']
     },
     description: {
         type: String,

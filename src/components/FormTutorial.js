@@ -66,7 +66,7 @@ const FormTutorial = ({ query, back }) => {
   //create the tutorial to database
   const createTutorial = async () => {
     try {
-        await fetch('https://suspicious-volhard-e36ba7.netlify.app/api/tutorials', {
+        await fetch('https://tutorial-app-isai.netlify.app/api/tutorials', {
           method: 'POST',
           headers: {
             "Content-Type": "application/json"
@@ -82,7 +82,7 @@ const FormTutorial = ({ query, back }) => {
   //update the tutorial to database
   const updateTutorial = async () => {
     try {
-      await fetch('https://suspicious-volhard-e36ba7.netlify.app/api/tutorials/' + query.id, {
+      await fetch('https://tutorial-app-isai.netlify.app/api/tutorials/' + query.id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
