@@ -26,7 +26,7 @@ const Education = ({tutorials}) => {
 export default Education;
 
 export const getServerSideProps = async (ctx) => {
-  const res = await fetch("https://tutorial-app-isai.netlify.app/api/tutorials");
+  const res = await fetch("https://tutorials-app.vercel.app/api/tutorials");
   const tutorials = await res.json();
 
   return {

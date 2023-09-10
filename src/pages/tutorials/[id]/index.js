@@ -18,7 +18,7 @@ const TutorialDetails = ({ tutorial, error }) => {
   //delete tutorial with _id from the props
   const deleteTutorial = async () => {
     try {
-      await fetch(`https://tutorial-app-isai.netlify.app/api/tutorials/${tutorial._id}`, {
+      await fetch(`https://tutorials-app.vercel.app/api/tutorials/${tutorial._id}`, {
         method: "DELETE",
       });
     } catch (error) {
@@ -127,7 +127,7 @@ const TutorialDetails = ({ tutorial, error }) => {
 export default TutorialDetails;
 
 export async function getServerSideProps({ query: { id } }) {
-  const res = await fetch(`https://tutorial-app-isai.netlify.app/api/tutorials/${id}`);
+  const res = await fetch(`https://tutorials-app.vercel.app/api/tutorials/${id}`);
   if (res.status === 200) {
     const tutorial = await res.json();
     return {

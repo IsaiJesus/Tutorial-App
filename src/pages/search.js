@@ -49,18 +49,3 @@ const Search = () => {
 };
 
 export default Search;
-
-/*{filteredTutorials.length === 0 || search === "" ? (
-  <NotFound />
-) : (
-  <div className="py-8 sm:py-14 px-5">
-    <div className="mb-6">
-      <TitleSection title={title} />
-    </div>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {filteredTutorials.map((tutorial) => (
-        <Tutorial key={tutorial._id} {...tutorial} />
-      ))}
-    </div>
-  </div>
-)}*/
